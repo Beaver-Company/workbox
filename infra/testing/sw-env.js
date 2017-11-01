@@ -12,7 +12,12 @@
  */
 
 const serviceWorkerMock = require('service-worker-mock');
-const {IDBFactory, IDBKeyRange} = require('shelving-mock-indexeddb');
+const {
+  IDBFactory,
+  IDBKeyRange,
+  IDBDatabase,
+  IDBObjectStore,
+} = require('shelving-mock-indexeddb');
 const URLSearchParams = require('url-search-params');
 const Blob = require('./sw-env-mocks/Blob');
 const Event = require('./sw-env-mocks/Event');
@@ -44,6 +49,8 @@ global.FileReader = FileReader;
 global.Headers = Headers;
 global.indexedDB = new IDBFactory();
 global.IDBKeyRange = IDBKeyRange;
+global.IDBDatabase = IDBDatabase,
+global.IDBObjectStore = IDBObjectStore;
 global.importScripts = () => {};
 global.location = new URL('https://example.com');
 global.registration.sync = new SyncManager();
