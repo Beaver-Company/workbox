@@ -33,5 +33,5 @@ export {
   fetchWrapper,
   indexedDBHelper,
   WorkboxError,
-  getFriendlyURL
+  getFriendlyURL,
 };
